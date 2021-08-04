@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import Giphy from './component/Giphy';
+import Giphy from './components/Giphy';
 
 
 const App = ()=>{
