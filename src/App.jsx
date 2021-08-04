@@ -8,12 +8,12 @@ const App = ()=>{
   const [searchInput, setSearchInput] = useState("")
   
   let handleChange = (event)=> {
-    setSearchInput({ [event.target.name]: event.target.value })
+    setSearchInput(event.target.value)
   }
   let handleSubmit = (event)=>{
     event.preventDefault()
 
-    const url = `http://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${searchInput.searchInput}`
+    const url = `http://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${searchInput}`
     fetch(url)
         .then(response=> response.json())
       .then(data=> {
@@ -28,7 +28,7 @@ const App = ()=>{
         <input
           name='searchInput'
           type='text'
-          value={searchInput.value}
+          value={searchInput}
           onChange={handleChange}
         />
         <button type='submit'>Search</button>
